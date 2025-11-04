@@ -1,0 +1,41 @@
+**Ejercicio**: Explora un repositorio GitHub público de análisis de datos
+Ejercicio práctico para aplicar los conceptos aprendidos.
+
+Ve a https://github.com/ y busca "data analysis" o "pandas tutorial"
+Elige un repositorio interesante (por ejemplo, uno con notebooks de Jupyter)
+Examina la estructura del repositorio:
+¿Cuántos commits tiene el historial?
+¿Cuántas ramas hay?
+¿Cuándo fue el último commit?
+¿Quiénes son los contribuidores principales?
+Observa cómo está organizado:
+¿Hay documentación (README.md)?
+¿Están los datos separados del código?
+¿Hay scripts de automatización?
+Pregunta reflexiva: ¿Cómo crees que Git ayuda en proyectos colaborativos de análisis de datos?
+
+Nota: No necesitas clonar el repositorio aún, solo explóralo visualmente en GitHub.
+
+Requerimientos:
+No se requieren instalaciones para este día. Solo necesitas acceso a un navegador web para explorar GitHub.
+
+--------------------------------
+
+Knowledge Quiz
+Answer the following questions to verify your understanding.
+
+1. ¿Qué característica fundamental diferencia a Git de sistemas de control de versiones centralizados tradicionales?
+
+Almacena archivos de manera más eficiente
+
+Tiene mejor interfaz gráfica
+
+Cada copia del repositorio contiene el historial completo
+Correct!
+
+Es más rápido para operaciones básicas
+
+----------------
+Explanation:
+
+La arquitectura distribuida de Git significa que cada clon del repositorio contiene el historial completo, a diferencia de sistemas centralizados donde solo el servidor tiene todo el historial.
