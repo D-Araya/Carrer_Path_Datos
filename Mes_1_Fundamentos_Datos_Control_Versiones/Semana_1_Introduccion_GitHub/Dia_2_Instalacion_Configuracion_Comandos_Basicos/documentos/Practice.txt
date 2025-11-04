@@ -1,0 +1,38 @@
+**Ejercicio**: Configura Git y crea tu primer repositorio local
+Ejercicio práctico para aplicar los conceptos aprendidos.
+
+Instalación:
+
+En macOS: brew install git
+En Ubuntu/Debian: sudo apt install git
+Verifica: git --versión
+
+Configuración inicial:
+
+git config --global user.name "Tu Nombre Completo"
+git config --global user.email "tu.email@ejemplo.com"
+git config --global core.editor "code --wait"  # Para VS Code
+git config --global init.defaultBranch main
+
+Verificación de configuración:
+
+git config --list --show-origin
+
+Crear primer repositorio:
+
+mkdir mi-primer-repo
+cd mi-primer-repo
+git init
+echo "# Mi primer repositorio" > README.md
+git status
+git add README.md
+git status
+git commit -m "Initial commit: Agregar README básico"
+git log --oneline
+
+Verificación: Confirma que puedes ver el historial de commits y que Git está configurado correctamente.
+
+Requerimientos:
+Sistema operativo: macOS, Windows, o Linux
+Terminal/Command Line con acceso a comandos básicos
+Permisos de administrador para instalación (opcional si ya está instalado)
