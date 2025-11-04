@@ -1,6 +1,6 @@
-# 📁 Career Path - Datos
+# 📁 Actividades Career Path - Datos
 
-Bienvenido al programa completo de formación en Datos. Este repositorio contiene un plan estructurado de 3 meses para convertirte en un profesional de datos, cubriendo desde fundamentos hasta proyectos avanzados.
+Este repositorio contiene las actividades del programa completo de formación en Datos. Un plan estructurado de 3 meses para convertirse en un profesional de datos, cubriendo desde fundamentos hasta proyectos avanzados.
 
 ## 📚 Estructura del Programa
 
