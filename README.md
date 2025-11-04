@@ -31,5 +31,3 @@ Implementa pipelines completos con Python, SQL y Apache Airflow, culminando en u
 - [ ] Mes 3: Proyecto Final
 
 ---
-
-**Última actualización:** $(date +%Y-%m-%d)
