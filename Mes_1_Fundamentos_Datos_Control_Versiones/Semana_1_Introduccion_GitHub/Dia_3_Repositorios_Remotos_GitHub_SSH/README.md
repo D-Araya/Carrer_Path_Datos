@@ -405,6 +405,11 @@ git remote add origin git@github.com:TU_USUARIO/REPO.git
 | Recomendado para | Uso ocasional | Uso frecuente |
 
 ---
+## ✅ Evidencia
+
+![Configuración de conexión SSH a GitHub](imagenes/Evidencia_dia_3_SSH.png)
+
+---
 
 ## 🚀 Próximos Pasos
 
