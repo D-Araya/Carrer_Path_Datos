@@ -1,1 +1,6 @@
 # Documento de Análisis de Datos
+
+## Análisis de Datos Principal
+- Dashboard interactivo de métricas clave
+- Visualización de tendencias temporales
+- Reportes automatizados semanales
