@@ -4,3 +4,8 @@
 - Dashboard interactivo de métricas clave
 - Visualización de tendencias temporales
 - Reportes automatizados semanales
+
+## Análisis de Ventas Mejorado
+- Implementación de métricas avanzadas
+- Segmentación por categorías de producto
+- Análisis de tendencias y patrones estacionales
