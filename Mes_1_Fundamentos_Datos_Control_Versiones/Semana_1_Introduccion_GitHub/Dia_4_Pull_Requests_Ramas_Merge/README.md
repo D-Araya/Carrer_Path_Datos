@@ -56,7 +56,7 @@ git commit -m "docs: Crear archivo inicial de análisis"
 git push origin main
 ```
 
-**Resultado:**
+✅ Evidencia **Resultado:** 
 ```
 [main 08244d3] docs: Crear archivo inicial de análisis
  1 file changed, 1 insertion(+)
@@ -133,7 +133,7 @@ git status
 git commit -m "feat: Agregar sección de análisis de ventas mejorado"
 ```
 
-**Resultado:**
+✅ Evidencia **Resultado:**
 ```
 [feature-analisis-ventas 99dc71b] feat: Agregar sección de análisis de ventas mejorado
  1 file changed, 5 insertions(+)
@@ -145,7 +145,7 @@ git commit -m "feat: Agregar sección de análisis de ventas mejorado"
 git push origin feature-analisis-ventas
 ```
 
-**Resultado:**
+✅ Evidencia **Resultado:**
 ```
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
@@ -222,7 +222,7 @@ git commit -m "feat: Agregar análisis de datos principal"
 git push origin main
 ```
 
-**Resultado:**
+✅ Evidencia **Resultado:**
 ```
 
 warning: in the working copy of 'analisis.txt', LF will be replaced by CRLF the next time Git touches it
@@ -252,7 +252,7 @@ main                    ← Tiene "Análisis de Datos Principal"
 git merge feature-analisis-ventas
 ```
 
-**Resultado - CONFLICTO:**
+✅ Evidencia **Resultado - CONFLICTO:**
 ```
 Auto-merging analisis.txt
 CONFLICT (content): Merge conflict in analisis.txt
@@ -269,7 +269,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 git status
 ```
 
-**Resultado:**
+✅ Evidencia **Resultado:**
 ```
 On branch main
 You have unmerged paths.
@@ -289,7 +289,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 cat analisis.txt
 ```
 
-**Contenido con marcadores de conflicto:**
+✅ Evidencia **Contenido con marcadores de conflicto:**
 ```
 # Documento de Análisis de Datos
 
@@ -330,7 +330,7 @@ vim analisis.txt
 
 **Estrategias de resolución:**
 
-**Opción A - Mantener ambas secciones (RECOMENDADO):**
+✅ Evidencia **Opción A - Mantener ambas secciones (RECOMENDADO):**
 ```
 # Documento de Análisis de Datos
 
@@ -386,7 +386,7 @@ git add analisis.txt
 git status
 ```
 
-**Resultado:**
+✅ Evidencia **Resultado:**
 ```
 On branch main
 All conflicts fixed but you are still merging.
@@ -413,7 +413,7 @@ git commit -m "merge: Resolver conflicto entre análisis de datos y ventas
 git push origin main
 ```
 
-**Resultado:**
+✅ Evidencia **Resultado:**
 ```
 Enumerating objects: 7, done.
 Counting objects: 100% (7/7), done.
@@ -557,7 +557,7 @@ git push origin main --force  # Actualizar remoto
 git log --oneline --graph --all
 ```
 
-**Resultado esperado:**
+✅ Evidencia **Resultado esperado:**
 ```
 *   6a86f92 (HEAD -> main, origin/main) merge: Resolver conflicto entre análisis de datos y ventas
 |\
@@ -583,7 +583,7 @@ git log --oneline --graph --all
 git branch -a
 ```
 
-**Resultado:**
+✅ Evidencia **Resultado:**
 ```
   feature-analisis-ventas
 * main
@@ -845,7 +845,8 @@ main (producción)
 **Conflictos resueltos:** 1  
 **Estrategia de resolución:** Mantener ambas secciones
 
-**Archivo de trabajo:** `analisis.txt`
+✅ **Evidencia** --> **Archivo de trabajo:** `analisis.txt` 
+https://github.com/D-Araya/Carrer_Path_Datos/blob/main/analisis.txt
 
 ---
 
