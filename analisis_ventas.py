@@ -163,3 +163,50 @@ def generar_reporte_texto(metricas):
 {linea}
 """
     return reporte
+def validar_datos_entrada(datos):
+    """
+    Valida que los datos sean adecuados para análisis estadístico
+    
+    Realiza múltiples verificaciones:
+    - Verifica que no sea None
+    - Verifica que no esté vacío (para pandas Series/DataFrame)
+    - Verifica que tenga longitud mayor a cero
+    
+    Args:
+        datos: Datos a validar (pd.Series, pd.DataFrame, list, array)
+    
+    Raises:
+        ValueError: Si los datos son None, vacíos, o tienen longitud cero
+        TypeError: Si el tipo de datos no es compatible con análisis
+    
+    Returns:
+        bool: True si los datos son válidos y listos para análisis
+    
+    Example:
+        >>> datos = pd.Series([100, 200, 300])
+        >>> validar_datos_entrada(datos)
+        True
+        
+        >>> datos_vacios = pd.Series([])
+        >>> validar_datos_entrada(datos_vacios)
+        ValueError: Los datos no pueden estar vacíos
+    """
+    # Verificar None
+    if datos is None:
+        raise ValueError("Los datos no pueden ser None")
+    
+    # Verificar si es un objeto pandas vacío
+    if hasattr(datos, 'empty') and datos.empty:
+        raise ValueError("Los datos no pueden estar vacíos (pandas DataFrame/Series)")
+    
+    # Verificar longitud para otros tipos (list, array, etc.)
+    if hasattr(datos, '__len__') and len(datos) == 0:
+        raise ValueError("Los datos deben tener al menos un elemento")
+    
+    # Verificar que sea un tipo compatible
+    tipos_validos = (pd.Series, pd.DataFrame, list, tuple, np.ndarray)
+    if not isinstance(datos, tipos_validos):
+        raise TypeError(f"Tipo de datos no compatible: {type(datos)}. "
+                       f"Se esperaba: pandas Series/DataFrame, list, tuple o numpy array")
+    
+    return True
