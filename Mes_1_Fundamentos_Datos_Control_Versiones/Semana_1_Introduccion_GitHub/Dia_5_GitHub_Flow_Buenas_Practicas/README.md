@@ -525,10 +525,9 @@ branch 'feature/dashboard-ventas-v1' set up to track 'origin/feature/dashboard-v
 
 Cuando accedes a tu repositorio en GitHub, verás un banner amarillo:
 
-```
-feature/dashboard-ventas-v1 had recent pushes 2 minutes ago
-[Compare & pull request]
-```
+✅ Evidencia
+**Resultado:**
+![Evidencia del punto 7](imagen/banner_amarillo_PR.png)
 
 Click en **"Compare & pull request"**
 
