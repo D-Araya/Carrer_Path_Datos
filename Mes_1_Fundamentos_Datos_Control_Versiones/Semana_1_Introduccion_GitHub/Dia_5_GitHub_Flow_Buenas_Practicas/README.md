@@ -652,25 +652,10 @@ plt.tight_layout()
 plt.show()
 ```
 
-**Output esperado:**
-```
-==================================================
-           REPORTE DE ANÁLISIS DE VENTAS
-==================================================
+✅ Evidencia
+**Resultado**
 
-📊 MÉTRICAS PRINCIPALES:
-   • Total de Ventas:        $    10,100.00
-   • Promedio:               $     1,262.50
-   • Mediana:                $     1,275.00
-
-📈 ESTADÍSTICAS:
-   • Venta Máxima:           $     1,500.00
-   • Venta Mínima:           $     1,000.00
-   • Desviación Estándar:    $       154.73
-   • Coef. Variación:                 12.25%
-
-==================================================
-```
+![Evidencia del punto 8](imagenes/Evidencia_PR.png)
 
 ## 🔗 Referencias y Documentación
 
@@ -742,7 +727,8 @@ Requiere las siguientes librerías Python:
 **Impacto:** Medio  
 **Riesgo:** Bajo  
 **Tiempo estimado de revisión:** 20-30 minutos
-```
+
+---
 
 #### Crear el Pull Request
 
@@ -750,11 +736,9 @@ Requiere las siguientes librerías Python:
 2. Click en el botón verde **"Create pull request"**
 3. Espera a que GitHub procese
 
-**Resultado:**
-```
-✅ Pull Request #2 created successfully
-feature/dashboard-ventas-v1 → main
-```
+✅ Evidencia **Resultado:**
+
+![Evidencia del punto 8](imagenes/Evidencia_PR_successfully.png)
 
 ---
 
@@ -774,7 +758,7 @@ Busca la función `calcular_metricas_clave` y agrega un comentario:
 2. Click en el icono **"+"** azul que aparece
 3. Escribe este comentario:
 
-```markdown
+```
 💡 **Sugerencia de mejora - Validación de datos**
 
 La función `calcular_metricas_clave()` debería validar que los datos de entrada no sean `None` o estén vacíos para evitar errores en tiempo de ejecución.
@@ -794,7 +778,7 @@ def calcular_metricas_clave(datos):
         raise ValueError("Los datos deben tener al menos un elemento")
     
     # ... resto del código
-```
+
 
 **Beneficios:**
 - ✅ Errores más claros para el usuario
@@ -804,6 +788,7 @@ def calcular_metricas_clave(datos):
 
 ¿Qué te parece agregar esta validación? 👍
 ```
+
 
 4. Click en **"Start a review"**
 
@@ -825,7 +810,8 @@ def generar_grafico_ventas_mensuales(datos, titulo='Ventas Mensuales - Análisis
 ```
 
 Esto daría más flexibilidad sin romper el código existente.
-```
+
+----
 
 #### Finalizar la revisión
 
@@ -852,12 +838,6 @@ En general, muy buen trabajo. Una vez implementada la validación de datos, esta
 ```
 
 4. Click en **"Submit review"**
-
-**Estado del PR:**
-```
-⚠️ Changes requested
-1 review requesting changes
-```
 
 ---
 
@@ -967,10 +947,10 @@ Implementa sugerencia de @reviewer en PR #2.
 Co-authored-by: Reviewer <reviewer@example.com>"
 ```
 
-**Resultado:**
+✅ Evidencia **Resultado:**
 ```
-[feature/dashboard-ventas-v1 ghi3456] fix: Agregar validación robusta de datos de entrada
- 1 file changed, 44 insertions(+)
+[feature/dashboard-ventas-v1 c875771] fix: Agregar validación robusta de datos de entrada
+ 1 file changed, 48 insertions(+), 1 deletion(-)
 ```
 
 **Notas importantes del commit:**
@@ -986,9 +966,6 @@ Co-authored-by: Reviewer <reviewer@example.com>"
 Ahora integremos la validación en la función existente:
 
 ```bash
-# Nota: En un editor real (VS Code, nano, vim) editarías directamente
-# Para este ejercicio, podemos documentar el cambio
-
 # La función calcular_metricas_clave debe quedar así:
 cat > temp_fix.py << 'EOF'
 def calcular_metricas_clave(datos):
@@ -1018,11 +995,6 @@ def calcular_metricas_clave(datos):
     }
     return metricas
 EOF
-
-# En la práctica, editarías el archivo con:
-# code analisis_ventas.py  # VS Code
-# nano analisis_ventas.py  # Nano
-# vim analisis_ventas.py   # Vim
 ```
 
 **Commit de integración:**
@@ -1037,8 +1009,13 @@ git commit -m "refactor: Integrar validación en calcular_metricas_clave
 - Mejorar documentación de errores posibles
 
 Completa implementación de mejora solicitada en code review."
-```
 
+```
+✅ Evidencia **Resultado:**
+```
+[feature/dashboard-ventas-v1 ae43a65] refactor: Integrar validación en calcular_metricas_clave
+ 1 file changed, 77 insertions(+), 437 deletions(-)
+```
 ---
 
 ### 1️⃣3️⃣ Push de los Cambios
@@ -1048,28 +1025,24 @@ Completa implementación de mejora solicitada en code review."
 git push origin feature/dashboard-ventas-v1
 ```
 
-**Resultado:**
+✅ Evidencia **Resultado:**
 ```
-Enumerating objects: 8, done.
-Counting objects: 100% (8/8), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (6/6), 1.82 KiB | 1.82 MiB/s, done.
-Total 6 (delta 3), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1003 bytes | 1003.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To github.com:D-Araya/Carrer_Path_Datos.git
-   def5678..ghi3456  feature/dashboard-ventas-v1 -> feature/dashboard-ventas-v1
+   ae43a65..24c85c1  feature/dashboard-ventas-v1 -> feature/dashboard-ventas-v1
 ```
 
 **¡El PR se actualiza automáticamente en GitHub!**
 
 En la pestaña "Conversation" del PR verás:
-```
-reviewer requested changes 20 minutes ago
-D-Araya pushed 2 commits 1 minute ago
-  • fix: Agregar validación robusta de datos de entrada
-  • refactor: Integrar validación en calcular_metricas_clave
-```
+
+![Evidencia del punto 13](imagenes/Conversation_PR.png)
 
 ---
 
@@ -1109,7 +1082,7 @@ ValueError: Los datos no pueden estar vacíos (pandas DataFrame/Series)
 ```
 
 El código ahora es mucho más robusto. ¿Podrías revisar nuevamente? 🙏
-```
+
 
 4. Click **"Comment"**
 
@@ -1288,19 +1261,20 @@ Your branch is behind 'origin/main' by 5 commits, and can be fast-forwarded.
 git pull origin main
 ```
 
-**Resultado:**
+✅ Evidencia **Resultado:**
 ```
-remote: Enumerating objects: 1, done.
-remote: Counting objects: 100% (1/1), done.
-remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
-Unpacking objects: 100% (1/1), 920 bytes | 920.00 KiB/s, done.
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (4/4), 2.11 KiB | 86.00 KiB/s, done.
 From github.com:D-Araya/Carrer_Path_Datos
  * branch            main       -> FETCH_HEAD
-   abc1234..xyz7890  main       -> origin/main
-Updating abc1234..xyz7890
+   57d346a..79b90a5  main       -> origin/main
+Updating 57d346a..79b90a5
 Fast-forward
- analisis_ventas.py | 185 ++++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 185 insertions(+)
+ analisis_ventas.py | 232 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 232 insertions(+)
  create mode 100644 analisis_ventas.py
 ```
 
@@ -1326,9 +1300,9 @@ cat analisis_ventas.py
 git branch -d feature/dashboard-ventas-v1
 ```
 
-**Resultado:**
+✅ Evidencia **Resultado:**
 ```
-Deleted branch feature/dashboard-ventas-v1 (was ghi3456).
+Deleted branch feature/dashboard-ventas-v1 (was 24c85c1).
 ```
 
 **Si aparece error:**
@@ -1352,7 +1326,7 @@ git branch -D feature/dashboard-ventas-v1
 git branch
 ```
 
-**Resultado esperado:**
+✅ Evidencia **Resultado:**
 ```
 * main
 ```
@@ -1362,9 +1336,8 @@ git branch
 git branch -r
 ```
 
-**Resultado esperado:**
+✅ Evidencia **Resultado **
 ```
-  origin/HEAD -> origin/main
   origin/main
 ```
 
@@ -1373,10 +1346,9 @@ git branch -r
 git branch -a
 ```
 
-**Resultado esperado:**
+✅ Evidencia **Resultado**
 ```
 * main
-  remotes/origin/HEAD -> origin/main
   remotes/origin/main
 ```
 
@@ -1387,19 +1359,9 @@ git branch -a
 git log --oneline --graph --all -10
 ```
 
-**Resultado esperado:**
-```
-*   xyz7890 (HEAD -> main, origin/main, origin/HEAD) Merge pull request #2 from D-Araya/feature/dashboard-ventas-v1
-|\  
-| * jkl7890 refactor: Integrar validación en calcular_metricas_clave
-| * ghi3456 fix: Agregar validación robusta de datos de entrada
-| * def5678 feat: Agregar funciones de visualización y análisis estadístico
-| * abc1234 feat: Agregar módulo base de análisis de ventas
-|/  
-* mno2345 merge: Resolver conflicto entre análisis de datos y ventas
-* pqr6789 docs: Crear archivo inicial de análisis
-* stu0123 Initial commit
-```
+✅ Evidencia **Resultado**
+
+![Evidencia del punto 20](imagenes/historial_grafico.png)
 
 #### 3. Verificar estado limpio
 
@@ -1408,7 +1370,7 @@ git log --oneline --graph --all -10
 git status
 ```
 
-**Resultado esperado:**
+✅ Evidencia **Resultado**
 ```
 On branch main
 Your branch is up to date with 'origin/main'.
@@ -1446,9 +1408,9 @@ wc -l analisis_ventas.py
 grep "^def " analisis_ventas.py
 ```
 
-**Resultado esperado:**
+✅ Evidencia **Resultado**
 ```
-185 analisis_ventas.py
+232 analisis_ventas.py
 
 def configurar_estilo_grafico():
 def crear_dashboard_basico():
@@ -1464,6 +1426,7 @@ def validar_datos_entrada(datos):
 # Ver detalles del merge commit
 git show HEAD --stat
 ```
+![Evidencia del punto 20.1](imagenes/ultimo_commit.png)
 
 ---
 
@@ -2788,9 +2751,6 @@ Después de completar este ejercicio, has dominado:
 
 **Nombre del Proyecto:** Career Path Datos  
 **Repositorio:** https://github.com/D-Araya/Carrer_Path_Datos  
-**Fecha de Realización:** [Completa cuando hagas el ejercicio]  
-**Duración Real:** [Registra tu tiempo]  
-**Dificultades Encontradas:** [Anota los desafíos]
 
 ### Ramas Trabajadas
 
@@ -2800,54 +2760,11 @@ Después de completar este ejercicio, has dominado:
 **Feature:**
 - `feature/dashboard-ventas-v1` - Dashboard de análisis de ventas
 
-### Pull Request Creado
-
-**Número:** #[número]  
-**Título:** feat: Dashboard básico de análisis de ventas  
-**Estado:** ✅ Merged  
-**Revisores:** [Nombres]  
-**Commits:** 4  
-**Archivos modificados:** 1
-
-### Lecciones Aprendidas
-
-1. [Anota tu aprendizaje clave 1]
-2. [Anota tu aprendizaje clave 2]
-3. [Anota tu aprendizaje clave 3]
-
-### Mejoras Futuras
-
-- [ ] Agregar más tipos de gráficos
-- [ ] Implementar tests unitarios
-- [ ] Crear documentación extendida
-- [ ] Agregar ejemplos interactivos
-
 ---
 
 ## 🔖 Tags y Keywords
 
 `git` `github` `github-flow` `pull-request` `code-review` `conventional-commits` `best-practices` `workflow` `collaboration` `branching` `merging` `ci-cd` `devops` `version-control` `career-path` `data-science` `python` `matplotlib` `pandas`
-
----
-
-## 📞 Contacto y Soporte
-
-**¿Preguntas sobre el ejercicio?**
-- Abre un issue en el repositorio
-- Contacta al instructor
-- Consulta la documentación oficial
-
-**¿Encontraste un error?**
-- Reporta el issue con detalles
-- Si puedes, crea un PR con la corrección
-
----
-
-## ✨ Conclusión
-
-¡Felicitaciones! Has completado exitosamente el ejercicio de **GitHub Flow Completo con Convenciones Profesionales**. 
-
-Has aprendido no solo las mecánicas técnicas de Git y GitHub, sino también las mejores prácticas que utilizan equipos profesionales en la industria del software.
 
 ### Lo que ahora puedes hacer:
 
@@ -2869,10 +2786,6 @@ Considera practicar con:
 - **Git Rebase:** Para mantener un historial lineal limpio
 - **GitHub Actions:** Para automatizar testing y deployment
 - **Advanced Branching:** Estrategias para proyectos grandes
-
----
-
-**¡Sigue practicando y nunca dejes de aprender! 🚀**
 
 ---
 
