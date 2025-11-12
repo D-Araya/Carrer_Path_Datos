@@ -447,7 +447,7 @@ tail -20 analisis_ventas.py
 ```
 ✅ Evidencia
 **Resultado:**
-![Evidencia del punto 4](imagen/Evidencia_punto_4.png)
+![Evidencia del punto 4](imagenes/Evidencia_punto_4.png)
 ---
 
 ### 5️⃣ Segundo Commit
@@ -527,7 +527,7 @@ Cuando accedes a tu repositorio en GitHub, verás un banner amarillo:
 
 ✅ Evidencia
 **Resultado:**
-![Evidencia del punto 7](imagen/banner_amarillo_PR.png)
+![Evidencia del punto 7](imagenes/banner_amarillo_PR.png)
 
 Click en **"Compare & pull request"**
 
