@@ -51,3 +51,115 @@ def crear_dashboard_basico():
 if __name__ == "__main__":
     configurar_estilo_grafico()
     crear_dashboard_basico()
+
+def generar_grafico_ventas_mensuales(datos):
+    """
+    Genera gráfico de líneas para visualizar ventas mensuales
+    
+    Args:
+        datos (pd.Series): Serie temporal con datos de ventas
+                          Index: fechas/meses
+                          Values: montos de ventas
+    
+    Returns:
+        matplotlib.figure.Figure: Objeto figura con el gráfico generado
+    
+    Example:
+        >>> datos = pd.Series([1000, 1200, 1100], 
+        ...                   index=['Ene', 'Feb', 'Mar'])
+        >>> fig = generar_grafico_ventas_mensuales(datos)
+        >>> plt.show()
+    """
+    configurar_estilo_grafico()
+    
+    fig, ax = plt.subplots()
+    ax.plot(datos.index, datos.values, 
+            color=COLORES_CORPORATIVOS['secundario'],
+            linewidth=2.5,
+            marker='o',
+            markersize=8,
+            markerfacecolor=COLORES_CORPORATIVOS['acento'],
+            markeredgewidth=2,
+            markeredgecolor=COLORES_CORPORATIVOS['primario'])
+    
+    ax.set_title('Ventas Mensuales - Análisis Temporal', 
+                 fontsize=14, 
+                 fontweight='bold',
+                 color=COLORES_CORPORATIVOS['primario'])
+    ax.set_xlabel('Mes', fontweight='bold')
+    ax.set_ylabel('Ventas ($)', fontweight='bold')
+    ax.grid(True, alpha=0.3, linestyle='--')
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    
+    return fig
+
+def calcular_metricas_clave(datos):
+    """
+    Calcula métricas estadísticas clave de los datos de ventas
+    
+    Args:
+        datos (pd.Series): Serie con datos numéricos de ventas
+    
+    Returns:
+        dict: Diccionario con métricas calculadas:
+              - total: Suma total de ventas
+              - promedio: Media aritmética
+              - mediana: Valor central
+              - maximo: Valor máximo
+              - minimo: Valor mínimo
+              - desviacion: Desviación estándar
+              - variacion: Coeficiente de variación (%)
+    
+    Example:
+        >>> datos = pd.Series([1000, 1200, 1100, 1300])
+        >>> metricas = calcular_metricas_clave(datos)
+        >>> print(f"Total: ${metricas['total']:,.2f}")
+        Total: $4,600.00
+    """
+    metricas = {
+        'total': datos.sum(),
+        'promedio': datos.mean(),
+        'mediana': datos.median(),
+        'maximo': datos.max(),
+        'minimo': datos.min(),
+        'desviacion': datos.std(),
+        'variacion': (datos.std() / datos.mean() * 100) if datos.mean() != 0 else 0
+    }
+    return metricas
+
+def generar_reporte_texto(metricas):
+    """
+    Genera un reporte en formato texto de las métricas calculadas
+    
+    Args:
+        metricas (dict): Diccionario con métricas (output de calcular_metricas_clave)
+    
+    Returns:
+        str: Reporte formateado y listo para imprimir
+    
+    Example:
+        >>> metricas = calcular_metricas_clave(datos)
+        >>> reporte = generar_reporte_texto(metricas)
+        >>> print(reporte)
+    """
+    linea = "=" * 50
+    reporte = f"""
+{linea}
+           REPORTE DE ANÁLISIS DE VENTAS
+{linea}
+
+�� MÉTRICAS PRINCIPALES:
+   • Total de Ventas:        ${metricas['total']:>15,.2f}
+   • Promedio:               ${metricas['promedio']:>15,.2f}
+   • Mediana:                ${metricas['mediana']:>15,.2f}
+
+��� ESTADÍSTICAS:
+   • Venta Máxima:           ${metricas['maximo']:>15,.2f}
+   • Venta Mínima:           ${metricas['minimo']:>15,.2f}
+   • Desviación Estándar:    ${metricas['desviacion']:>15,.2f}
+   • Coef. Variación:        {metricas['variacion']:>15.2f}%
+
+{linea}
+"""
+    return reporte
