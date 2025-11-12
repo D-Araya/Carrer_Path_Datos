@@ -652,11 +652,6 @@ plt.tight_layout()
 plt.show()
 ```
 
-✅ Evidencia
-**Resultado**
-
-![Evidencia del punto 8](imagenes/Evidencia_PR.png)
-
 ## 🔗 Referencias y Documentación
 
 - **Issue relacionado:** #1 (si existe)
@@ -736,9 +731,10 @@ Requiere las siguientes librerías Python:
 2. Click en el botón verde **"Create pull request"**
 3. Espera a que GitHub procese
 
-✅ Evidencia **Resultado:**
+✅ Evidencia
+**Resultado**
 
-![Evidencia del punto 8](imagenes/Evidencia_PR_successfully.png)
+![Evidencia del punto 8](imagenes/Evidencia_PR.png)
 
 ---
 
@@ -1200,21 +1196,9 @@ Historial lineal limpio
    ```
 4. Click en **"Confirm merge"** (botón verde)
 
-**Resultado:**
-```
-✅ Pull request successfully merged and closed
+✅ Evidencia **Resultado:**
 
-feature/dashboard-ventas-v1 was merged into main
-```
-
-#### Post-merge
-
-GitHub muestra:
-```
-Pull request successfully merged and closed
-
-[Delete branch] button
-```
+![Evidencia del punto 8](imagenes/Evidencia_PR_successfully.png)
 
 ---
 
