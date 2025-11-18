@@ -45,7 +45,7 @@ Este ejercicio se centra en dominar estas dos uniones para responder preguntas d
 
 
 
-![Image of SQL JOIN types Venn diagram](imagenes/SQL_joins.png)
+![Image of SQL JOIN types Venn diagram](imagenes/SQL_joins.jpg)
 
 ---
 
