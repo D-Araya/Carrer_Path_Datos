@@ -308,7 +308,7 @@ pip                       24.x.x
 #### 5.1 Verificar versiones con un solo comando
 
 ```bash
-python -c "import numpy as np; import pandas as pd; import matplotlib.pyplot as plt; print('NumPy:', np.__version__); print('Pandas:', pd.__version__); print('Matplotlib:', plt.__version__)"
+python -c "import numpy as np; import pandas as pd; import matplotlib; print('NumPy:', np.__version__); print('Pandas:', pd.__version__); print('Matplotlib:', matplotlib.__version__)"
 ```
 
 **Resultado esperado:**
@@ -356,6 +356,7 @@ En VS Code, crear un nuevo archivo llamado `test_analisis.py` con el siguiente c
 
 import numpy as np
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
 
 print("=" * 50)
@@ -365,7 +366,7 @@ print("=" * 50)
 # Verificar versiones
 print(f"\nNumPy versión: {np.__version__}")
 print(f"Pandas versión: {pd.__version__}")
-print(f"Matplotlib versión: {plt.__version__}")
+print(f"Matplotlib versión: {matplotlib.__version__}")
 
 print("\n" + "=" * 50)
 print("GENERACIÓN DE DATOS DE EJEMPLO")
@@ -965,6 +966,56 @@ ModuleNotFoundError: No module named 'numpy'
 3. Verificar que estás usando el Python correcto: `where python`
 
 ---
+
+### Problema 6: Error `[Errno 2] No such file or directory` (Rutas largas)
+
+**Error:**
+
+```
+[Errno 2] No such file or directory: '...vendors-node_modules_d3-color_src_color_js-node_modules...'
+```
+
+**Contexto:**
+El problema es que Jupyter instala archivos con nombres extremadamente largos (especialmente extensiones de JavaScript), y sumado a rutas de carpetas profundas (ej: `C:\Users\...\Documents\proyectos\Carrer_Path_Datos\`), se excede el límite de 260 caracteres de Windows.
+
+**Solución 1: Mover tu proyecto a la raíz (Recomendada)**
+Aunque se acorten los nombres de las carpetas, la ruta puede seguir siendo demasiado profunda.
+
+1.  Borra la carpeta `analisis_datos_env` actual (puede estar corrupta).
+2.  Crea una carpeta directamente en el disco C (ej: `C:\Dev` o `C:\Proyectos`).
+3.  Mueve tu carpeta del proyecto allí (ej: `C:\Dev\M1_S3_D1`).
+4.  Abre esa carpeta en VS Code y reinstala:
+
+<!-- end list -->
+
+```powershell
+python -m venv venv
+.\venv\Scripts\activate
+pip install numpy pandas matplotlib jupyter
+```
+
+**Solución 2: Habilitar "Long Paths" en Windows (Definitiva)**
+Para mantener las carpetas donde están, se debe configurar Windows para aceptar rutas largas.
+
+1.  Abre PowerShell como Administrador.
+2.  Ejecuta:
+
+<!-- end list -->
+
+```powershell
+New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+```
+
+3.  **Reinicia tu computadora** (obligatorio).
+4.  Vuelve a intentar instalar las librerías.
+
+---
+
+## ✅ Evidencia
+![Evidencia](imagenes/Evidencia.png)
+
+---
+
 
 ## 🚀 Próximos Pasos
 
