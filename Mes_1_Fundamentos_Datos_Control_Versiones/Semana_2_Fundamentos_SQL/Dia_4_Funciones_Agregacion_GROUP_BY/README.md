@@ -523,15 +523,15 @@ HAVING SUM(dp.cantidad * dp.precio_unitario) > 0;
 ```
 ciudad      num_pedidos  ingresos_ciudad
 ----------  -----------  ---------------
-Barcelona   1            349.49
-Madrid      2            1340.99
+Barcelona   2            349.49
+Madrid      3            1340.99
 ```
 
 **Análisis:**
 - `LEFT JOIN`: Incluiría ciudades sin ventas (si existieran)
 - `HAVING ... > 0`: Excluye ciudades con ventas nulas
-- Madrid genera más ingresos ($1,340.99) con 2 pedidos
-- Barcelona tiene 1 pedido por $349.49
+- Madrid genera más ingresos ($1,340.99) con 3 pedidos
+- Barcelona tiene 2 pedido por $349.49
 - María Rodríguez (Madrid) no aparece porque no tiene pedidos
 
 ---
@@ -558,8 +558,8 @@ ORDER BY ingresos_ciudad DESC;
 ```
 ciudad      num_clientes  num_pedidos  ingresos_ciudad  ticket_promedio
 ----------  ------------  -----------  ---------------  ---------------
-Madrid      2             2            1340.99          670.5
-Barcelona   1             1            349.49           349.49
+Madrid      2             3            1340.99          670.5
+Barcelona   1             2            349.49           349.49
 ```
 
 **Análisis:**
@@ -623,13 +623,13 @@ ORDER BY gasto_total DESC;
 ```
 cliente            ciudad      num_pedidos  unidades_compradas  gasto_total
 -----------------  ----------  -----------  ------------------  -----------
-Ana García         Madrid      2            4                   1340.99
-Carlos López       Barcelona   1            2                   349.49
+Ana García         Madrid      3            4                  1340.99
+Carlos López       Barcelona   2            2                   349.49
 ```
 
 **Análisis:**
-- Ana García es la mejor cliente ($1,340.99 en 2 pedidos)
-- Carlos López ha realizado 1 pedido por $349.49
+- Ana García es la mejor cliente ($1,340.99 en 3 pedidos)
+- Carlos López ha realizado 2 pedido por $349.49
 - María Rodríguez no aparece porque no tiene pedidos
 - **Uso práctico:** Programas de lealtad, descuentos VIP
 
@@ -922,6 +922,11 @@ HAVING COUNT(*) > 0                        -- 5. Filtra grupos
 ORDER BY total DESC                        -- 7. Ordena
 LIMIT 10;                                  -- 8. Limita resultados
 ```
+
+---
+
+## ✅ Evidencia
+![Evidencia](imagenes/Evidencia.png)
 
 ---
 

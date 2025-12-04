@@ -387,9 +387,10 @@ WHERE p.precio > (
 
 **Resultado:**
 ```
-nombre         precio   categoria     precio_promedio_categoria
--------------  -------  ------------  -------------------------
-Laptop Dell    1200.0   Electrónica   700.0
+nombre             precio   categoria     precio_promedio_categoria
+-------------      -------  ------------  -------------------------
+Laptop Dell        1200.0   Electrónica   700.0
+Teclado Mecánico   89.99    Accesorios    57.74
 ```
 
 **Análisis:**
@@ -399,7 +400,7 @@ Laptop Dell    1200.0   Electrónica   700.0
 - **Accesorios**: Promedio = (25.50 + 89.99) / 2 = 57.75
 - Solo la Laptop ($1,200) está por encima del promedio de Electrónica ($700)
 - Monitor ($199.99) está por debajo del promedio de Electrónica
-- Ningún Accesorio supera su promedio
+- Teclado Mecánico ($89.99) está por encima del promedio de Accesorios ($57.74)
 
 ---
 
@@ -420,13 +421,12 @@ WHERE precio > (SELECT AVG(precio) FROM productos);
 nombre         precio   categoria
 -------------  -------  ------------
 Laptop Dell    1200.0   Electrónica
-Monitor 24"    199.99   Electrónica
 ```
 
 **Análisis:**
 - **Subconsulta simple**: Calcula el precio promedio de TODOS los productos
 - Precio promedio general: (1200 + 25.50 + 89.99 + 199.99 + 149.50) / 5 = $332.99
-- Solo Laptop y Monitor superan el promedio general
+- Solo Laptop superan el promedio general
 - **Diferencia con consulta anterior**: Esta compara con el promedio global, no por categoría
 
 ---
@@ -549,8 +549,7 @@ ORDER BY precio DESC;
 ```
 nombre         precio   categoria     precio_promedio_general
 -------------  -------  ------------  -----------------------
-Laptop Dell    1200.0   Electrónica   332.99
-Monitor 24"    199.99   Electrónica   332.99
+Laptop Dell    1200.0   Electrónica   333.0
 ```
 
 **Análisis:**
@@ -882,9 +881,11 @@ WHERE (SELECT SUM(dp.cantidad)
 ```
 nombre              categoria     unidades_vendidas  precio
 ------------------  ------------  -----------------  ------
-Mouse Logitech      Accesorios    2                  25.5
-Audífonos Sony      Audio         1                  149.5
 Laptop Dell         Electrónica   1                  1200.0
+Mouse Logitech      Accesorios    2                  25.5
+Monitor 24"         Electrónica   1                  199.99
+Audífonos Sony      Audio         1                  149.5
+
 ```
 
 **Análisis:**
@@ -1188,6 +1189,11 @@ WHERE EXISTS (SELECT 1 FROM pedidos p WHERE p.cliente_id = c.id);
 4. Lee segunda fila de clientes (id=2)
 5. Ejecuta subconsulta para id=2
 6. Y así sucesivamente...
+
+---
+
+## ✅ Evidencia
+![Evidencia](imagenes/Evidencia.png)
 
 ---
 
